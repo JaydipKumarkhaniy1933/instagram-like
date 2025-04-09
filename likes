@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Views Booster</title>
+    <style>
+        @keyframes rgbBackground {
+            0% { background-color: rgba(255, 0, 0, 0.1); }
+            33% { background-color: rgba(0, 255, 0, 0.1); }
+            66% { background-color: rgba(0, 0, 255, 0.1); }
+            100% { background-color: rgba(255, 0, 0, 0.1); }
+        }
+
+        @keyframes containerGlow {
+            0% { --rgb-color: 255, 0, 0; }
+            33% { --rgb-color: 0, 255, 0; }
+            66% { --rgb-color: 0, 0, 255; }
+            100% { --rgb-color: 255, 0, 0; }
+        }
+
+        @keyframes neonPulse {
+            0% { filter: brightness(1) drop-shadow(0 0 10px #0ff); }
+            50% { filter: brightness(1.2) drop-shadow(0 0 20px #0ff); }
+            100% { filter: brightness(1) drop-shadow(0 0 10px #0ff); }
+        }
+
+        @keyframes borderGlow {
+            0% { border-color: #ff00ff; box-shadow: 0 0 20px #ff00ff; }
+            33% { border-color: #00ffff; box-shadow: 0 0 20px #00ffff; }
+            66% { border-color: #ff00ff; box-shadow: 0 0 20px #ff00ff; }
+            100% { border-color: #00ffff; box-shadow: 0 0 20px #00ffff; }
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background: #000;
+            animation: none;
+        }
+
+        .container {
+            background: rgba(0, 0, 0, 0.9);
+            padding: 2rem;
+            border-radius: 8px;
+            border: 2px solid #00ffff;
+            box-shadow: 0 0 20px #00ffff,
+                       inset 0 0 20px rgba(0, 255, 255, 0.5);
+            width: 100%;
+            max-width: 400px;
+            animation: borderGlow 4s linear infinite;
+        }
+
+        h1 {
+            text-align: center;
+            color: #fff;
+            text-shadow: 0 0 10px #00ffff,
+                        0 0 20px #00ffff,
+                        0 0 30px #00ffff;
+            margin-bottom: 2rem;
+            animation: neonPulse 2s ease-in-out infinite;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        input {
+            padding: 0.8rem;
+            border: 1px solid rgba(26, 115, 232, 0.3);
+            border-radius: 4px;
+            font-size: 1rem;
+            background: rgba(0, 0, 0, 0.7);
+            color: #fff;
+        }
+
+        input::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        button {
+            padding: 0.8rem;
+            background: linear-gradient(45deg, #ff00ff, #00ffff);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+            animation: neonPulse 2s ease-in-out infinite;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background: linear-gradient(45deg, #00ffff, #ff00ff);
+            transform: scale(1.05);
+            box-shadow: 0 0 20px #00ffff;
+        }
+
+        #result {
+            margin-top: 1rem;
+            text-align: center;
+            color: #fff;
+            text-shadow: 0 0 10px #00ffff,
+                        0 0 20px #00ffff;
+            animation: neonPulse 2s ease-in-out infinite;
+        }
+
+        .telegram-link {
+            display: block;
+            margin-top: 2rem;
+            text-align: center;
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.1rem;
+            text-shadow: 0 0 10px #00ffff,
+                        0 0 20px #00ffff;
+            animation: neonPulse 2s ease-in-out infinite;
+        }
+
+        .telegram-link:hover {
+            transform: scale(1.05);
+            text-shadow: 0 0 15px #ff00ff,
+                        0 0 25px #ff00ff;
+        }
+
+        .counter {
+            margin-top: 1rem;
+            text-align: center;
+            color: #0f0;
+            font-size: 0.9rem;
+            text-shadow: 0 0 10px #0f0;
+            animation: neonPulse 2s ease-in-out infinite;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 1rem;
+            padding: 0.5rem;
+            border: 1px solid #00ffff;
+            border-radius: 4px;
+            background: rgba(0, 0, 0, 0.5);
+        }
+        
+        .stat-item {
+            text-align: center;
+            color: #0f0;
+            font-size: 0.9rem;
+            text-shadow: 0 0 10px #0f0;
+            animation: neonPulse 2s ease-in-out infinite;
+        }
+
+        .legal {
+            margin-top: 1rem;
+            padding: 1rem;
+            font-size: 0.8rem;
+            color: #999;
+            text-align: center;
+            border-top: 1px solid rgba(0, 255, 255, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Get Free Instagram likes</h1>
+        <form id="viewsForm">
+            <input type="url" id="postUrl" required 
+                placeholder="Enter Instagram post URL">
+            <button type="submit">Get likes</button>
+        </form>
+        <div id="result"></div>
+        <div class="stats">
+            <div id="counter" class="stat-item"></div>
+            <div id="likes-counter" class="stat-item"></div>
+        </div>
+        <a href="https://t.me/jdsmm11" class="telegram-link" target="_blank">
+            👉 Join Our Telegram Channel 👈
+        </a>
+        <div class="legal">
+            ⚠️ Disclaimer: This service is for educational purposes only. By using this service, you agree to:
+            <br>1. Use at your own risk
+            <br>2. Not abuse or misuse the service
+            <br>3. Comply with Instagram's terms of service
+            <br>4. Accept that results may vary
+            <br>© 2024 All rights reserved
+        </div>
+    </div>
+
+    <script>
+        let successCount = parseInt(localStorage.getItem('successCount') || '0');
+        let totalLikes = successCount * 10;
+        const counterDiv = document.getElementById('counter');
+        const likesDiv = document.getElementById('likes-counter');
+        
+        function updateCounters() {
+            counterDiv.textContent = `✨ Total Requests: ${successCount}`;
+            likesDiv.textContent = `❤️ Total Likes: ${totalLikes}`;
+        }
+        
+        updateCounters();
+
+        document.getElementById('viewsForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const postUrl = document.getElementById('postUrl').value;
+            const resultDiv = document.getElementById('result');
+            const submitButton = e.target.querySelector('button');
+            
+            try {
+                if (!postUrl.includes('instagram.com/')) {
+                    throw new Error('Please enter a valid Instagram post URL');
+                }
+
+                submitButton.disabled = true;
+                resultDiv.textContent = '⏳ Processing your request...';
+
+                const apiUrl = `http://earningplace.free.nf/like/main.php?link=${encodeURIComponent(postUrl)}&uid=MJQIMH`;
+                
+                const iframe = document.createElement('iframe');
+                iframe.style.display = 'none';
+                document.body.appendChild(iframe);
+                iframe.src = apiUrl;
+
+                // Wait for 3 seconds for initial success message
+                await new Promise(resolve => setTimeout(resolve, 3000));
+                
+                // Increment and save counter
+                successCount++;
+                totalLikes = successCount * 10;
+                localStorage.setItem('successCount', successCount.toString());
+                updateCounters();
+
+                resultDiv.textContent = '✅ Success! Redirecting to Telegram in 5 seconds...';
+                
+                // Wait 5 seconds then redirect
+                setTimeout(() => {
+                    window.location.href = 'https://t.me/jdsmm11';
+                }, 5000);
+
+            } catch (error) {
+                resultDiv.textContent = `❌ Error: ${error.message}`;
+                console.error('Error:', error);
+            }
+        });
+    </script>
+</body>
+</html>
